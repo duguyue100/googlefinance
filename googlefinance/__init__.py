@@ -37,7 +37,7 @@ def buildUrl(symbols):
     return 'http://finance.google.com/finance/info?client=ig&q=' \
         + symbol_list
 
-def buildNewsUrl(symbol, qs='&start=0&num=1000'):
+def buildNewsUrl(symbol, qs='&start=0&num=3'):
    return 'http://www.google.com/finance/company_news?output=json&q=' \
         + symbol + qs
 
@@ -52,7 +52,6 @@ def request(symbols):
 
 def requestNews(symbol):
     url = buildNewsUrl(symbol)
-    print "url: ", url
     req = Request(url)
     resp = urlopen(req)
     content = resp.read()
